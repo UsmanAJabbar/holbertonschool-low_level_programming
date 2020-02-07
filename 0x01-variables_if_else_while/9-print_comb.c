@@ -13,8 +13,9 @@ int main(void)
 	for (l = 48; l <= 57; l++)
 	{
 	putchar(l);
-	putchar(44);
-	putchar(32);
+	if (l < 57)
+		putchar(44);
+		putchar(32);
 	}
 	putchar ('\n');
 	return (0);
