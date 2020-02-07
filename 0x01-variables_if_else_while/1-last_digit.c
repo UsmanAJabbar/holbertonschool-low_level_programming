@@ -29,7 +29,7 @@ int main(void)
 	}
 	else if (last == 0)
 	{
-		printf("is %d and is 0\n", n);
+		printf("is %d and is 0\n", last);
 	}
 	return (0);
 }
