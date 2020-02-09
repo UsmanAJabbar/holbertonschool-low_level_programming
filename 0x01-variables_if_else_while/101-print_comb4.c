@@ -9,9 +9,9 @@
 #define ZERO 48
 #define NINE 57
 
-int main (void)
+int main(void)
 {
- int f=0, m=0, l=0;
+int f = 0, m = 0, l = 0;
 
 	for (f = ZERO; f <= NINE; f++)
 	{
@@ -25,12 +25,12 @@ int main (void)
 				putchar(m);
 				putchar(l);
 
-					if(f != 55 || m != 56 || l != 57)
+					if (f != 55 || m != 56 || l != 57)
 					{
 						putchar(',');
 						putchar(' ');
 					}
-                            	}
+				}
 			}
 		}
 	}
