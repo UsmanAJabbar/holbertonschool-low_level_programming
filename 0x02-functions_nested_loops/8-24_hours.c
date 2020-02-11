@@ -1,9 +1,8 @@
 #include "holberton.h"
 
-#define ZERO 48
-#define NINE 57
-#define TWO 50
-#define SIX 54
+/**
+ * jack_bauer - fancy name that'll print out time
+ */
 
 void jack_bauer(void)
 {
