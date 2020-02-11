@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
+ * print_sign - prints symbols, comma and then the return value
  *
- * _isalpha - checks for captial letters
+ * @n: variable
  *
- * Return: Always 0.
+ * Return: 0 if 0, 1 if above 0, -1 if below 0.
  */
 
 int print_sign(int n)
