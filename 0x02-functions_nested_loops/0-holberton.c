@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+
 #define ZERO 48
 #define NINE 57
 
