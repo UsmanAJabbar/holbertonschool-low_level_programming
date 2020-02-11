@@ -50,7 +50,7 @@ void print_to_98(int n)
 			_putchar((fullnum % 10) + '0');
 		}
 		else
-                {
+		{
 			_putchar((fullnum / 10) + '0');
 			_putchar((fullnum % 10) + '0');
 		}
