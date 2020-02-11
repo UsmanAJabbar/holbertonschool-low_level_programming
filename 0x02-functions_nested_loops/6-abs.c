@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
  * _abs - computs absolute value
  *
- * Return: Always 0.
+ * @n: pulled from the main file
+ *
+ * Return: Returns result.
  */
 
 int _abs(int n)
