@@ -1,5 +1,12 @@
 #include "holberton.h"
 
+/**
+ * print_alphabet_x10 - prints a-z 10x.
+ *
+ * return - Always (0)
+ *
+ */
+
 void print_alphabet_x10(void)
 {
 	int alpha;
