@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
+ * print_last_digit - computs absolute value
  *
- * _abs - computs absolute value
+ * @n: pulled from main file
  *
  * Return: Always 0.
  */
