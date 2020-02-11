@@ -1,68 +1,28 @@
 #include "holberton.h"
 #include <stdio.h>
 
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+
 void print_to_98(int n)
 {
-	int fullnum;
-
-	for (fullnum = n; fullnum <= 98; fullnum++)
+	if (n < 98)
 	{
-		if (fullnum >= 0 && fullnum <= 9)
+		for (; n < 98; n++)
 		{
-			_putchar((fullnum % 10) + '0');
-		}
-
-		if (fullnum <= -10 && fullnum >= -99)
-		{
-			_putchar('-');
-			_putchar((-fullnum / 10) + '0');
-			_putchar((-fullnum % 10) + '0');
-		}
-
-		if (fullnum < 0 && fullnum >= -9)
-		{
-			_putchar('-');
-			_putchar(-fullnum + '0');
-		}
-
-		if (fullnum > 9)
-		{
-			_putchar((fullnum / 10) + '0');
-			_putchar((fullnum % 10) + '0');
-		}
-		if (fullnum < 98)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
-		if (fullnum == 98)
-		{
-			_putchar('\n');
-		}
+			printf("%d, ", n);
+		};
 	}
 
-	for (fullnum = n; fullnum > 98; fullnum--)
+	else if (n > 98)
 	{
-		if (fullnum >= 100 && fullnum < 999)
+		for (; n > 98; n--)
 		{
-			_putchar((fullnum / 100) + '0');
-			_putchar(((fullnum / 10) % 10) + '0');
-			_putchar((fullnum % 10) + '0');
-		}
-		else
-		{
-			_putchar((fullnum / 10) + '0');
-			_putchar((fullnum % 10) + '0');
-		}
-		if (fullnum > 98)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
-
-		if (fullnum == 98)
-		{
-			_putchar('\n');
+			printf("%d, ", n);
 		}
 	}
+printf("%d\n", 98);
 }
