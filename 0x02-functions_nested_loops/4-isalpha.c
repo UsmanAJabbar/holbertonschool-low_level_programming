@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
  * _isalpha - checks for captial letters
  *
- * Return: Always 0.
+ * @c: variable
+ *
+ * Return: 1 if letter, 0 is not a number.
  */
 
 int _isalpha(int c)
