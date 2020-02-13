@@ -3,9 +3,6 @@
 /**
  * times_table - computs absolute value
  *
- * @a: var 1
- * @b: var 2
- *
  * Return: Returns result.
  */
 
@@ -31,10 +28,10 @@ void times_table(void)
 
 			else if (ab >= 10)
 			{
-					_putchar(',');
-					_putchar(' ');
-					_putchar((ab / 10) + '0');
-					_putchar((ab % 10) + '0');
+				_putchar(',');
+				_putchar(' ');
+				_putchar((ab / 10) + '0');
+				_putchar((ab % 10) + '0');
 			}
 
 			else
