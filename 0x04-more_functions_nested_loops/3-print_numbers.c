@@ -13,6 +13,6 @@ void print_numbers(void)
 	for (sdnums = '0'; sdnums <= '9'; sdnums++)
 	{
 		_putchar(sdnums);
-		_putchar('\n');
 	}
+	_putchar('\n');
 }
