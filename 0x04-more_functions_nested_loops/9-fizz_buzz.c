@@ -3,7 +3,6 @@
 
 /**
  * main - contains all code
- * @a: looping variable
  * Return: Always 0
  */
 
