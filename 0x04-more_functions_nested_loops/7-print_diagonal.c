@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_line - prints line visualizing
- * how far inputs from main are to 0
+ * print_diagonal - prints gaps trailing
+ * with slashes
  * @n: variable input originates from
  * main file
  */
@@ -14,7 +14,7 @@ void print_diagonal(int n)
 
 	for (rows = 0; rows < n; rows++)
 	{
-		for (gaps = 0; gaps < rows;gaps++)
+		for (gaps = 0; gaps < rows; gaps++)
 		{
 			_putchar(' ');
 		}
