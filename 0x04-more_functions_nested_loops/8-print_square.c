@@ -2,10 +2,10 @@
 
 /**
  * print_square - prints # in a square format
- * from inputs received from var n
- * @rows: refer to rows
- * @columns: refer to columns
+ * from inputs received from var size
+ * @size: var from main file
  */
+
 void print_square(int size)
 {
 	int rows;
