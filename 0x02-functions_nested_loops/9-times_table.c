@@ -24,11 +24,12 @@ void times_table(void)
 		{
 			ab = a * b;
 			ab1 = ab / 10;
-			ab2 = ab % 10:
+			ab2 = ab % 10;
 
-			if (b <= 0)
+			if (b == 0)
 			{
 				_putchar('0');
+			}
 			else
 			{
 				if (ab1 == 0)
@@ -47,9 +48,9 @@ void times_table(void)
 				_putchar(',');
 				_putchar(' ');
 			}
-			b++;
 		}
-		_putchar('\n');
-		a++;
+		b++;
 	}
+	_putchar('\n');
+	a++;
 }
