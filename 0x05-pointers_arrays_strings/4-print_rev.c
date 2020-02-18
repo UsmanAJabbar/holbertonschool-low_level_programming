@@ -1,9 +1,11 @@
 #include "holberton.h"
 
 /**
- * _puts - prints out any string
- * @str: string imported from main file
- *
+ * print_rev - finds the total indexes
+ * then reverses them to print out
+ * the string in reverse
+ * @s: string imported from main
+ * file.
  */
 
 void print_rev(char *s)
@@ -16,6 +18,12 @@ void print_rev(char *s)
 	}
 	_putchar('\n');
 }
+
+/**
+ * _strlen - reverses the string
+ * @s: imported
+ * Return: length to print_rev
+ */
 
 int _strlen(char *s)
 {
