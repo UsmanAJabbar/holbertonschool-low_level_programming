@@ -8,7 +8,7 @@
 void puts_half(char *str)
 {
 	int i;
-	int odd = _strlen(str) / 2;
+	int odd = (_strlen(str) + 1) / 2;
 	int even = _strlen(str) / 2;
 	int totallength = _strlen(str);
 
@@ -39,6 +39,7 @@ void puts_half(char *str)
 int _strlen(char *s)
 {
 	int len;
+
 	for (len = 0; s[len] != '\0'; len++)
 		continue;
 	return (len);
