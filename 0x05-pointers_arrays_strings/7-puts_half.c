@@ -13,20 +13,9 @@ void puts_half(char *str)
 	int n = _strlen(str) - 1;
 	int odd = _strlen(str);
 
-	if (n % 2 == 0)
+	for (i = odd / 2; i <= n; i++)
 	{
-		for (i = 0; i <= n / 2; i++)
-		{
-			_putchar(str[i]);
-		}
-	}
-
-	else
-	{
-		for (i = odd / 2; i <= n; i++)
-		{
-			_putchar(str[i]);
-		}
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
