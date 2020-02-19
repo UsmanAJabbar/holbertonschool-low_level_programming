@@ -8,7 +8,7 @@
 void puts_half(char *str)
 {
 	int i;
-	int odd = ((_strlen(str) - 1) / 2);
+	int odd = _strlen(str) / 2;
 	int even = _strlen(str) / 2;
 	int totallength = _strlen(str);
 
