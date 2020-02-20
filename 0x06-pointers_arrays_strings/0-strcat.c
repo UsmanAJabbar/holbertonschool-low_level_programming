@@ -1,5 +1,14 @@
 #include "holberton.h"
 
+/**
+ * _strcat - returns two catted strings
+ * @dest: contains string "Hello "
+ * @src: contains string "World!\n"
+ * through the index.
+ * Return: Returns catted string
+ * for main
+ */
+
 char *_strcat(char *dest, char *src)
 {
 	int destlen = _strlen(dest);
@@ -7,7 +16,7 @@ char *_strcat(char *dest, char *src)
 
 	for (i = 0; i <= destlen; i++)
 	{
-		dest[destlen + i] = src [i];
+		dest[destlen + i] = src[i];
 	}
 	dest[destlen + i] = '\0';
 
