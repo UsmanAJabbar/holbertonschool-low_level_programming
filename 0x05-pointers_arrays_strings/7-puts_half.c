@@ -1,29 +1,28 @@
 #include "holberton.h"
-
 /**
  * puts_half - Halves the total number of indexes
  * @str: pointer. *str points to the actual value
  * i controls the index array, allowing it
  * loop.
  */
-
 void puts_half(char *str)
 {
 	int i;
-	int n = _strlen(str) - 1;
-	int odd = _strlen(str);
+	int odd = (_strlen(str) + 1) / 2;
+	int even = _strlen(str) / 2;
+	int totallength = _strlen(str);
 
-	if (n % 2 == 0)
+	if (totallength % 2 == 0)
 	{
-		for (i = 0; i <= n / 2; i++)
+		for (i = even; i < totallength; i++)
 		{
 			_putchar(str[i]);
 		}
 	}
 
-	else
+	else if (totallength % 2 != 0)
 	{
-		for (i = odd / 2; i <= n; i++)
+		for (i = odd; i < totallength; i++)
 		{
 			_putchar(str[i]);
 		}
@@ -37,13 +36,11 @@ void puts_half(char *str)
  * @s: finds the length
  * Return: Returns the length
  */
-
 int _strlen(char *s)
 {
 	int len;
 
 	for (len = 0; s[len] != '\0'; len++)
 		continue;
-
 	return (len);
 }
