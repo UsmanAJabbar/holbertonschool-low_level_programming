@@ -1,5 +1,12 @@
 #include "holberton.h"
 
+/**
+ * cap_string - changes the begginning
+ * of all worlds with a captial letter
+ * @a: array from main
+ * Return: Returns final value into a
+ */
+
 char *cap_string(char *a)
 {
 	int i;
