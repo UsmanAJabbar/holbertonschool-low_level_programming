@@ -1,6 +1,15 @@
 #include "holberton.h"
 #include <stdio.h>
 
+/**
+ * _strpbrk - Prints out everthing
+ * after value in accept is first
+ * found
+ * @s: strin
+ * @accept: characters
+ * Return: Returns output
+ */
+
 char *_strpbrk(char *s, char *accept)
 {
 	int i;
@@ -10,9 +19,9 @@ char *_strpbrk(char *s, char *accept)
 	{
 		for (j = 0; accept[j] != '\0'; j++)
 		{
-				if (accept[j] == s[i])
-					return(s + i);
+			if (accept[j] == s[i])
+				return (s + i);
 		}
 	}
-return(0);
+return (0);
 }
