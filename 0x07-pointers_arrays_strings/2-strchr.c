@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _strchr - prints out everything after
@@ -15,8 +16,8 @@ char *_strchr(char *s, char c)
 	for (index = 0; s != '\0'; s++)
 	{
 		if (s[index] == c)
-			return (s);
+			return(s);
 	}
 
-return ('\0');
+return (NULL);
 }
