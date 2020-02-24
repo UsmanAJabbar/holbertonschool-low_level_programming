@@ -18,6 +18,5 @@ char *_strchr(char *s, char c)
 		if (s[index] == c)
 			return (s);
 	}
-
-return (NULL);
+return ('\0');
 }
