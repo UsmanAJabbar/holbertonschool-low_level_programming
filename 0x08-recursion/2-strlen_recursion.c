@@ -6,7 +6,7 @@
  * IT COUNTS ONE
  * @s: contains string
  * the first character printed
- * Returns: Results to fill in values
+ * Return: Results to fill in values
  */
 
 int _strlen_recursion(char *s)
