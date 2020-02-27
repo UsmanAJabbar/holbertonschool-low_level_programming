@@ -14,6 +14,11 @@ int is_palindrome(char *s)
 		is_palindrome(s + 1);
 	}
 
+	else if (s[index] == '\0')
+	{
+		return (-1);
+	}
+
 return (1);
 }
 
