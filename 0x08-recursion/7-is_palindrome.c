@@ -1,5 +1,13 @@
 #include "holberton.h"
 
+/**
+ * is_palindrome - checks if string
+ * after being reversed is still
+ * palindrome
+ * @s: strings from main
+ * Return: 1 | 0
+ */
+
 int is_palindrome(char *s)
 {
 	int index = _strlen_recursion(s);
