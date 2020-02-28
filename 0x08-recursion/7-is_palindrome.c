@@ -1,4 +1,11 @@
 #include "holberton.h"
+/**
+ * is_palindrome - checks if string
+ * after being reversed is still
+ * palindrome
+ * @s: strings from main
+ * Return: 1 | 0
+ */
 
 int is_palindrome(char *s)
 {
@@ -12,11 +19,6 @@ int is_palindrome(char *s)
 	else if (*s == s[index - 1])
 	{
 		is_palindrome(s + 1);
-	}
-
-	else if (s[index] == '\0')
-	{
-		return (-1);
 	}
 
 return (1);
