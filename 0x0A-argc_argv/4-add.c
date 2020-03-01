@@ -22,6 +22,11 @@ int main(int argc, char *argv[])
 		{
 			if (argv[index][subindex] >= '0' && argv[index][subindex] <= '9')
 			{
+				while (argv[subindex] != '\0')
+				{
+					;
+				}
+
 				sum = sum + atoi(argv[index]);
 				break;
 			}
