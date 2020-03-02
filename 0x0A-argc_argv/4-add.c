@@ -15,27 +15,27 @@ int main(int argc, char *argv[])
 	int sum = 0;
 	int index = 1;
 	int subindex = 0;
+	int check = 0;
 
 	for (index = 1; index < argc; index++)
 	{
-		for (subindex = 0; argv[subindex] != '\0'; subindex++)
+		for (subindex = 0; argv[index][subindex] != '\0'; subindex++)
 		{
-			if (argv[index][subindex] >= '0' && argv[index][subindex] <= '9')
+			if (!(argv[index][subindex] >= '0' && argv[index][subindex] <= '9'))
 			{
-				while (argv[subindex] != '\0')
-				{
-					;
-				}
-
-				sum = sum + atoi(argv[index]);
-				break;
+				check++;
 			}
+		}
 
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+		if (check == 0)
+		{
+			sum = sum + atoi(argv[index]);
+		}
+
+		else
+		{
+			printf("Error\n");
+			return (1);
 		}
 	}
 printf("%d\n", sum);
