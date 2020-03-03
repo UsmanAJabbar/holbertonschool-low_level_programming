@@ -32,15 +32,19 @@ char *str_concat(char *s1, char *s2)
 
 	NewString = malloc((sizeof(char) * s1length) + (sizeof(char) * s2length));
 
+	if (NewString == NULL)
+	{
+		return (NULL);
+	}
+
 	for (index = 0; s1[index] != '\0'; index++)
 	{
 		NewString[index] = s1[index];
 	}
 
-	for (index = s1length, jindex = 0; index < cattedlength; index++)
+	for (index = s1length, jindex = 0; index < cattedlength; index++, jindex++)
 	{
 		NewString[index] = s2[jindex];
-		jindex++;
 	}
 
 	*(NewString + index) = '\0';
