@@ -21,6 +21,7 @@ char *create_array(unsigned int size, char c)
 	{
 		str[i] = c;
 	}
+	*(str + i) = '\0';
 
 	if (size == 0)
 	{
