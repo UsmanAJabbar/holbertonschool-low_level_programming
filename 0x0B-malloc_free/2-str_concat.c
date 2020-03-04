@@ -19,33 +19,23 @@ char *str_concat(char *s1, char *s2)
 	int cattedlength;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
 
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
 
 	while (s1[s1length] != '\0')
-	{
 		s1length++;
-	}
 
 	while (s2[s2length] != '\0')
-	{
 		s2length++;
-	}
 
 	cattedlength = s1length + s2length;
 
 	NewString = malloc((sizeof(char) * s1length) + (sizeof(char) * s2length));
 
 	if (NewString == NULL)
-	{
 		return (NULL);
-	}
 
 	for (index = 0; s1[index] != '\0'; index++)
 	{
