@@ -30,7 +30,7 @@ int **alloc_grid(int width, int height)
 
 	for (rows = 0; rows < height; rows++)
 	{
-		pointer[rows] = malloc(sizeof(int *) * width);
+		pointer[rows] = malloc(sizeof(int) * width);
 
 		if (pointer[rows] == NULL)
 		{
