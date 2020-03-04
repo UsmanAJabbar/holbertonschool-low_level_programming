@@ -20,7 +20,6 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 		s1 = "";
-
 	if (s2 == NULL)
 		s2 = "";
 
@@ -32,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 
 	cattedlength = s1length + s2length;
 
-	NewString = (char *) malloc((sizeof(char) * s1length) + (sizeof(char) * s2length));
+	NewString = (char *) malloc((sizeof(char) * cattedlength));
 
 	if (NewString == NULL)
 		return (NULL);
@@ -46,7 +45,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		NewString[index] = s2[jindex];
 	}
-
 	*(NewString + index) = '\0';
 
 	return (NewString);
