@@ -15,6 +15,11 @@ char *_strdup(char *str)
 	char *NewStr;
 	char *p;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (str[index] != '\0')
 	{
 		length++;
@@ -25,7 +30,7 @@ char *_strdup(char *str)
 
 	p = NewStr;
 
-	if (str == NULL || NewStr == NULL)
+	if (NewStr == NULL)
 	{
 		return (NULL);
 	}
