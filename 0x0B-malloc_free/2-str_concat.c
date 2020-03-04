@@ -45,6 +45,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		NewString[index] = s2[jindex];
 	}
+
 	*(NewString + index) = '\0';
 
 	return (NewString);
