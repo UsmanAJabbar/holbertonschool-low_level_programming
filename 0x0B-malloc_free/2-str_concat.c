@@ -32,7 +32,7 @@ char *str_concat(char *s1, char *s2)
 
 	cattedlength = s1length + s2length;
 
-	NewString = malloc((sizeof(char) * s1length) + (sizeof(char) * s2length));
+	NewString = (char *) malloc((sizeof(char) * s1length) + (sizeof(char) * s2length));
 
 	if (NewString == NULL)
 		return (NULL);
@@ -42,7 +42,7 @@ char *str_concat(char *s1, char *s2)
 		NewString[index] = s1[index];
 	}
 
-	for (index = s1length, jindex = 0; index < cattedlength; index++, jindex++)
+	for (index = s1length, jindex = 0; index <= cattedlength; index++, jindex++)
 	{
 		NewString[index] = s2[jindex];
 	}
