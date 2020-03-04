@@ -21,11 +21,11 @@ char *_strdup(char *str)
 		index++;
 	}
 
-	NewStr = malloc(sizeof(char) * length);
+	NewStr = malloc(sizeof(char) * length + 1);
 
 	p = NewStr;
 
-	if (str == '\0')
+	if (str == NULL)
 	{
 		return (NULL);
 	}
