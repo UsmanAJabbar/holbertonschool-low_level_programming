@@ -29,7 +29,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[s2len] != '\0')
 		s2len++;
 
-	if (s2len <= n)
+	if (n >= s2len)
 		cattedstring = malloc(sizeof(char) * (s1len + s2len + 1));
 
 	else
@@ -37,7 +37,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (cattedstring == NULL)
 	{
-		free(cattedstring);
 		return (NULL);
 	}
 
