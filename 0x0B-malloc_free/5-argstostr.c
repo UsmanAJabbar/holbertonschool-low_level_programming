@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include "holberton.h"
 
+/**
+ * argstostr - arguments to string
+ * @ac: arg count
+ * @av: arg verbose
+ * Return: Null | newstring
+ */
+
 char *argstostr(int ac, char **av)
 {
 	int i, len;
@@ -13,12 +20,8 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
-	{
 		for (len = 0; av[i][len]; len++)
-		{
 			size++;
-		}
-	}
 
 	newstring = malloc((sizeof(char) * size) + ac + 1);
 
