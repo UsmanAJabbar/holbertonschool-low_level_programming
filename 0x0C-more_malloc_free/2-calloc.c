@@ -21,14 +21,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	function = malloc(nmemb * size);
+	function = malloc(sizeof(char) * nmemb * size);
 
 	if (function == NULL)
 	{
 		return (NULL);
 	}
 
-	for (index = 0; index < size; index++)
+	for (index = 0; index < (nmemb * size); index++)
 	{
 		function[index] = 0;
 	}
