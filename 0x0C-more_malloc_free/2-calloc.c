@@ -25,6 +25,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (function == NULL)
 	{
+		free(function);
 		return (NULL);
 	}
 
