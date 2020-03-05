@@ -30,10 +30,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2len++;
 
 	if (s2len <= n)
-		cattedstring = malloc(sizeof(int) * (s1len + s2len + 1));
+		cattedstring = malloc(sizeof(char) * (s1len + s2len + 1));
 
 	else
-		cattedstring = malloc(sizeof(int) * (s1len + n + 1));
+		cattedstring = malloc(sizeof(char) * (s1len + n + 1));
 
 	if (cattedstring == NULL)
 	{
