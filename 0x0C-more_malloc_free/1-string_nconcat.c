@@ -29,9 +29,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[s2len] != '\0')
 		s2len++;
 
-	cattedstring = malloc(sizeof(int) * (s1len + n + 1));
+	if (s2len <= n)
+		cattedstring = malloc(sizeof(int) * (s1len + s2len + 1));
 
-	printf("This is how much space was allocated %d", s1len + n + 1);
+	else
+		cattedstring = malloc(sizeof(int) * (s1len + n + 1));
 
 	if (cattedstring == NULL)
 	{
@@ -40,14 +42,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	for (index = 0; index < s1len; index++)
-	{
 		cattedstring[index] = s1[index];
-	}
 
 	for (jindex = 0; jindex <= n; jindex++, index++)
-	{
 		cattedstring[index] = s2[jindex];
-	}
+
 	*(cattedstring + index) = '\0';
 	return (cattedstring);
 }
