@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	}
 
-	for (index = 0; index < s1len; index++)
+	for (index = 0; s1[index] != '\0'; index++)
 		cattedstring[index] = s1[index];
 
 	for (jindex = 0; jindex < n; jindex++, index++)
