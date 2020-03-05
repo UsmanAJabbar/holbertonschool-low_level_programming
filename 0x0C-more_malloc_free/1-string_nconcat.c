@@ -46,6 +46,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (jindex = 0; jindex < n; jindex++, index++)
 		cattedstring[index] = s2[jindex];
 
-	*(cattedstring + index) = '\0';
+	cattedstring[index] = '\0';
 	return (cattedstring);
 }
