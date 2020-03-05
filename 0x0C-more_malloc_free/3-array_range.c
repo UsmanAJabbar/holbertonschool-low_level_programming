@@ -23,7 +23,7 @@ int *array_range(int min, int max)
 
 	range = max - min + 1; /* total number of arrays to work with */
 
-	array = malloc(sizeof(int) * range);
+	array = malloc(sizeof(int) * (range));
 
 	if (array == NULL)
 	{
@@ -31,7 +31,7 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	for (index = 0; index <= range; index++)
+	for (index = 0; index < range; index++)
 	{
 		array[index] = min++; /* min is an int we can save min++ into *array */
 	}
