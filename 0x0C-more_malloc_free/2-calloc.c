@@ -13,7 +13,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *function;
+	char *function;
 	unsigned int index;
 
 	if (nmemb == 0 || size == 0)
@@ -21,7 +21,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	function = malloc(sizeof(int) * nmemb);
+	function = malloc(nmemb * size);
 
 	if (function == NULL)
 	{
