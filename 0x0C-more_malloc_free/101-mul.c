@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int result = 1;
-	int *return;
+	int *re;
 
 	if (argc == 3)
 	{
-		return = malloc(sizeof(int) * 20000);
+		re = malloc(sizeof(int) * 20000);
 
 		for (i = 1; i < argc; i++)
 		{
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		}
 
 	printf("%d\n", result);
-	return (0);
+	return (re);
 	}
 
 	else
