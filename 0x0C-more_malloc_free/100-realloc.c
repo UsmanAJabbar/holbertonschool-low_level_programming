@@ -6,6 +6,7 @@
  * _realloc - contains main function
  * @old_size: old size
  * @new_size: new size
+ * @ptr: pointer from main
  * Return: reallocate | ptr | NULL
  */
 
@@ -32,8 +33,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 
 	reallocate = malloc(new_size);
+	free(ptr);
 
-return(reallocate);
+	return (reallocate);
 }
 
 /* realloc - change the size of the previous malloc to a new malloc size */
