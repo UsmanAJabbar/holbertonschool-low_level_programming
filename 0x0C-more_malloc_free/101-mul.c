@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 3)
 	{
-		return = malloc(sizeof(int) * result);
+		return = malloc(sizeof(int) * 20000);
 
 		for (i = 1; i < argc; i++)
 		{
