@@ -1,7 +1,14 @@
 #ifndef _DOG_H
 #define _DOG_H
 
-struct my_dog
+/**
+ * struct dog - dog's properties
+ * @name: imports name
+ * @age: imports age
+ * @owner: imports the name of the owner
+ */
+
+struct dog
 {
 	char *name;
 	float age;
