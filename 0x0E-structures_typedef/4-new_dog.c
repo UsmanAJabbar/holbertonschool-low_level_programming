@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
+#include <strings.h>
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -8,8 +9,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *copyowner; /* stores old owner */
 	int i;
 
-	copyname = malloc(sizeof(char) * (name + 1)); /* creating space */
-	copyowner = malloc(sizeof(char) * (owner + 1));
+	copyname = malloc(sizeof(char) * (_strlen(name) + 1)); /* creating space */
+	copyowner = malloc(sizeof(char) * (_strlen(owner) + 1));
 
 	/* checking if malloc failed */
 
@@ -53,4 +54,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 		copyowner[j] = '\0'; /* adding null char to last index */
 	}
 	return(copyowner, age, owner);
+}
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (s != '\0')
+		len++;
+
+	return(len);
 }
