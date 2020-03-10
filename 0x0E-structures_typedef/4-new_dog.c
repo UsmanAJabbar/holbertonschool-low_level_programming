@@ -25,8 +25,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* checking if malloc failed */
 	if (bigdog == NULL)
+	{
+		free(bigdog);
 		return (NULL);
-
+	}
 	if (copyname == NULL)
 	{
 		free(copyname);
