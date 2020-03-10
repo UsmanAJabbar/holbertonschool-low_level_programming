@@ -1,67 +1,74 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dog.h"
-#include <strings.h>
+
+/**
+ * new_dog - function that creates a new dog
+ *
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ *
+ * Return: pointer to new dog
+ */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	dog_t *bigdog;
 	char *copyname; /* stores old name */
 	char *copyowner; /* stores old owner */
-	int i;
+	/* int i, j; */
 
+
+	bigdog = malloc(sizeof(dog_t));
 	copyname = malloc(sizeof(char) * (_strlen(name) + 1)); /* creating space */
 	copyowner = malloc(sizeof(char) * (_strlen(owner) + 1));
 
 	/* checking if malloc failed */
+	if (bigdog == NULL)
+		return (NULL);
 
 	if (copyname == NULL)
 	{
 		free(copyname);
 		return (NULL);
 	}
-
 	if (copyowner == NULL)
 	{
 		free(copyowner);
 		return (NULL);
 	}
-
 	/* copying contents into new pointers */
-
-	if ((*d).name == NULL)
-		return (NULL);
-
-	else
+	for (i = 0; name[i] != '\0'; i++)
 	{
-		for (i = 0; i < name[i] != '\0'; i++)
-		{
-			copyname[i] = name[i];
-		}
-		copyname[i] = '\0'; /* adding null char to last index */
+		copyname[i] = name[i];
 	}
-
-	if ((*d).owner == NULL)
+	copyname[i] = '\0';
+	for (j = 0; owner[j] != '\0'; j++)
 	{
-		return (NULL);
+		copyowner[j] = owner[j];
 	}
+	copyowner[j] = '\0';
 
-	else
-	{
-		for (j = 0; j < owner[j] != '\0'; j++)
-		{
-			copyowner[j] = owner[j];
-		}
-		copyowner[j] = '\0'; /* adding null char to last index */
-	}
-	return(copyowner, age, owner);
+	bigdog->name = copyname;
+	bigdog->age = age;
+	bigdog->owner = copyowner;
+	return (bigdog);
 }
+
+/**
+ * _strlen - function prints length
+ * @s: pointer imported from c
+ * Return: (0)
+ */
 
 int _strlen(char *s)
 {
 	int len = 0;
 
-	while (s != '\0')
+	while (s[len] != '\0')
 		len++;
 
-	return(len);
+	return (len);
 }
