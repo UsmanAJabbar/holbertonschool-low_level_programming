@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "dog.h"
 
 /**
@@ -19,7 +18,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *copyname; /* stores old name */
 	char *copyowner; /* stores old owner */
 	/* int i, j; */
-
 
 	bigdog = malloc(sizeof(dog_t));
 	copyname = malloc(sizeof(char) * (_strlen(name) + 1)); /* creating space */
