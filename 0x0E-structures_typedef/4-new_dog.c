@@ -23,7 +23,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	copyowner = malloc(sizeof(char) * (_strlen(owner) + 1));
 
 	/* checking if malloc failed */
-	if ((bigdog == NULL) || (copyname == NULL) || (copyname == NULL))
+	if ((bigdog == NULL) || (copyname == NULL) || (copyowner == NULL))
 	{
 		free(bigdog);
 		free(copyname);
