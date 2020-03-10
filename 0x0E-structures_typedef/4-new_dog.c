@@ -17,7 +17,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *bigdog;
 	char *copyname; /* stores old name */
 	char *copyowner; /* stores old owner */
-	int i, j;
 
 	bigdog = malloc(sizeof(dog_t));
 	copyname = malloc(sizeof(char) * (_strlen(name) + 1)); /* creating space */
@@ -32,17 +31,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	/* copying contents into new pointers */
-	for (i = 0; name[i] != '\0'; i++)
-	{
-		copyname[i] = name[i];
-	}
-	copyname[i] = '\0';
-	for (j = 0; owner[j] != '\0'; j++)
-	{
-		copyowner[j] = owner[j];
-	}
-	copyowner[j] = '\0';
+	_strcpy(copyname, name);
+	_strcpy(copyowner, owner);
 
 	bigdog->name = copyname;
 	bigdog->age = age;
@@ -64,4 +54,23 @@ int _strlen(char *s)
 		len++;
 
 	return (len);
+}
+
+/**
+ * _strcpy - copies string from dest to src
+ * @src: first var
+ * @dest: second var
+ * Return: returns stored value in dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != 0; i++)
+	{
+		dest[i] = src[i];
+	}
+dest[i] = '\0';
+return (dest);
 }
