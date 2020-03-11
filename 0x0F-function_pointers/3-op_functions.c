@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "calc.h"
+#include "3-calc.h"
 
 /**
  * op_add - adds two numbers
@@ -52,7 +52,7 @@ int op_mul(int a, int b)
  * @b: second parameter
  * Return: Returns result
  */
-int op_mod(int a, int b);
+int op_mod(int a, int b)
 {
 	return (a % b);
 }
