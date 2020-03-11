@@ -3,6 +3,15 @@
 #include "3-calc.h"
 #include <string.h>
 
+/**
+ * get_op_func - finds the function
+ * to use
+ * @s: operators from main
+ * Return: Returns after comparing input
+ * with struct string literal
+ * Else NULL
+ */
+
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
