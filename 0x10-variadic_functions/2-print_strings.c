@@ -2,23 +2,35 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
+/**
+ * print_strings - prints all strings
+ * @separator: ", " from main
+ * @n: number of elements
+ * Return: Void
+ */
+
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int index;
 	va_list members;
+	char *simple; /* declaring it before it conflicts with va_start */
 
 	va_start(members, n); /* members have n arguments */
 
 	for (index = 0; index < n; index++)
 	{
+		/*declared simple as a shortcut */
+		simple = va_arg(members, char *);
+
 		/* check if string itself is null */
-		if (va_arg(members, char *) == NULL)
+		if (simple == NULL)
 		{
-				printf("(nil)");
+			printf("(nil)");
 		}
 
-		printf("%s", va_arg(members, char *));
+		printf("%s", simple);
 
+		/* exclude seperator from last string */
 		if (separator != NULL && index < (n - 1))
 		{
 			printf("%s", separator);
