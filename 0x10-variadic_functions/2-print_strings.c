@@ -9,39 +9,22 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(members, n); /* members have n arguments */
 
-	if (separator != NULL)
+	for (index = 0; index < n; index++)
 	{
-		for (index = 0; index < n; index++)
+		/* check if string itself is null */
+		if (va_arg(members, char *) == NULL)
 		{
-			/* check if string itself is null */
-			if (va_arg(members, char *) == NULL)
-			{
 				printf("(nil)");
-			}
-
-			printf("%s", va_arg(members, char *));
-
-			if (index < n - 1) /* adds ", " after every string before the last one */
-			{
-				printf("%s", separator);
-			}
 		}
-		printf("\n");
-	}
 
-	if (separator == NULL)
-	{
-		for(index = 0; index < n; index++)
+		printf("%s", va_arg(members, char *));
+
+		if (separator != NULL && index < (n - 1))
 		{
-			/* check if string itself is null */
-			if (va_arg(members, char *) == NULL)
-			{
-				printf("(nil)");
-			}
-
-			printf("%s", va_arg(members, char *));
+			printf("%s", separator);
 		}
-		printf("\n");
 	}
+	printf("\n");
+
 	va_end(members);
 }
