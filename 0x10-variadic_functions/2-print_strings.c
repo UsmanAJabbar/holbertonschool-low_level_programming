@@ -17,7 +17,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(members, n); /* members have n arguments */
 
-	if (n >= 1)
+	if (n < 1)
+	{
+		printf("\n");
+		return;
+	}
+
+	else if (n >= 1)
 	{
 		for (index = 0; index < n; index++)
 		{
@@ -40,12 +46,5 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		printf("\n");
 	}
-
-	else if (n < 1)
-	{
-		printf("\n");
-		return;
-	}
-
 	va_end(members);
 }
