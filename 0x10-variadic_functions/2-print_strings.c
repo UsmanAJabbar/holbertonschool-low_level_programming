@@ -17,26 +17,35 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(members, n); /* members have n arguments */
 
-	for (index = 0; index < n; index++)
+	if (n >= 1)
 	{
-		/*declared simple as a shortcut */
-		simple = va_arg(members, char *);
-
-		/* check if string itself is null */
-		if (simple == NULL)
+		for (index = 0; index < n; index++)
 		{
-			printf("(nil)");
-		}
+			/*declared simple as a shortcut */
+			simple = va_arg(members, char *);
 
-		printf("%s", simple);
+			/* check if string itself is null */
+			if (simple == NULL)
+			{
+				printf("(nil)");
+			}
 
-		/* exclude seperator from last string */
-		if (separator != NULL && index < (n - 1))
-		{
-			printf("%s", separator);
+			printf("%s", simple);
+
+			/* exclude seperator from last string */
+			if (separator != NULL && index < (n - 1))
+			{
+				printf("%s", separator);
+			}
 		}
+		printf("\n");
 	}
-	printf("\n");
+
+	else
+	{
+		printf("\n");
+		return;
+	}
 
 	va_end(members);
 }
