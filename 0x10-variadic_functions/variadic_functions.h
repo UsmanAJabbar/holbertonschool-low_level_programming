@@ -2,8 +2,9 @@
 #define _VARIADIC_FUNCTIONS_H
 
 #include <stdarg.h>
-typedef struct {
-	char *s;
+
+typedef struct options {
+	char s;
 	void (*f)(va_list);
 	} options;
 
