@@ -37,7 +37,7 @@ void printf_str(va_list formatter)
 {
 	char *shortcut = va_arg(formatter, char *);
 
-	while (shortcut != NULL)
+	if (shortcut != NULL)
 	{
 		printf("%s", shortcut);
 		return;
