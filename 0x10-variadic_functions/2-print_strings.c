@@ -37,7 +37,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				printf("(nil)");
 			}
 
-			printf("%s", simple);
+			else
+				printf("%s", simple);
 
 			/* exclude seperator from last string */
 			if (separator != NULL && index < (n - 1))
