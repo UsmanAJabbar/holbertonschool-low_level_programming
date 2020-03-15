@@ -2,13 +2,10 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
-/* functions */
-
 /**
  * printf_c - prints characters
  * @formatter: list
  */
-
 void printf_c(va_list formatter)
 {
 	printf("%c", va_arg(formatter, int));
@@ -38,6 +35,12 @@ void printf_f(va_list formatter)
  */
 void printf_str(va_list formatter)
 {
+	if (*s == NULL)
+	{
+		printf("(nil)");
+	}
+
+	else
 	printf("%s", va_arg(formatter, char *));
 }
 
@@ -46,7 +49,6 @@ void printf_str(va_list formatter)
  * @format: contains specifiers
  * Return: Void
  */
-
 void print_all(const char * const format, ...)
 {
 	int index, jindex;
@@ -57,6 +59,7 @@ void print_all(const char * const format, ...)
 		{'f', printf_f},
 		{'s', printf_str},
 	};
+	char *separator = "";
 
 	va_start(formatter, format);
 
@@ -67,11 +70,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[index] == modulus[jindex].s) /* if match found */
 			{
+				printf("%s", separator);
 				modulus[jindex].f(formatter); /* modulus masking printf func */
-				if (format[index + 1] != '\0') /* if it isn't the last char, comma" */
-				{
-					printf(", ");
-				}
+				separator = ", ";
 				break; /* if found, break */
 			}
 			jindex++; /* if no match, check the next array in modulus */
