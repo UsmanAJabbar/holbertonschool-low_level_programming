@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include "variadic_functions.h"
 
 /**
@@ -24,10 +23,10 @@ int sum_them_all(const unsigned int n, ...)
 
 	for (index = 0; index < n; index++)
 	{
-	/* continues adding everything into sum until index count < # of elements */
 		sum += va_arg(input, int);
 	}
 
 	va_end(input);
+
 	return (sum);
 }
