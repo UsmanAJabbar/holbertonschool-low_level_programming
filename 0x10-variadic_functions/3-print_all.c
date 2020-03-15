@@ -44,7 +44,6 @@ void printf_str(va_list formatter)
 	}
 	printf("(nil)");
 }
-
 /**
  * print_all - acts a printf function
  * @format: contains specifiers
