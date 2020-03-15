@@ -35,6 +35,7 @@ void printf_f(va_list formatter)
 void printf_str(va_list formatter)
 {
 	char *shortcut = va_arg(formatter, char *);
+
 	if (shortcut != NULL)
 	{
 		printf("%s", shortcut);
@@ -59,6 +60,7 @@ void print_all(const char * const format, ...)
 		{'s', printf_str},
 	};
 	char *separator = "";
+
 	va_start(formatter, format);
 	while (format && format[index]) /* while there's something to test */
 	{
