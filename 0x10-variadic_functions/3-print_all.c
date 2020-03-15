@@ -2,12 +2,6 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
-/* declarations */
-void printf_c(va_list);
-void printf_i(va_list);
-void printf_f(va_list);
-void printf_str(va_list);
-
 /* functions */
 void printf_c(va_list formatter)
 {
