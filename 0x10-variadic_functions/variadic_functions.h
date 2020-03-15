@@ -7,7 +7,7 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
 /* Number 3 */
-typedef struct options {
+struct options {
         char s;
         void (*f)(va_list);
         } options;
