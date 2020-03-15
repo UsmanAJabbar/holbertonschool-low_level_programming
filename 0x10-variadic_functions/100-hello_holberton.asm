@@ -12,5 +12,5 @@ main:
 
 section	.data
 
-msg db 'Hello, Holberton', 0xa
+msg db 'Hello, Holberton', 10
 len equ	$ - msg
