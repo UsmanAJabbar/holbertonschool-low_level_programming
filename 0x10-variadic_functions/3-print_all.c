@@ -19,7 +19,6 @@ void printf_i(va_list formatter)
 {
 	printf("%d", va_arg(formatter, int));
 }
-
 /**
  * printf_f - prints floats
  * @formatter: list
