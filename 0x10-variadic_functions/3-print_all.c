@@ -35,15 +35,14 @@ void printf_f(va_list formatter)
  */
 void printf_str(va_list formatter)
 {
-	char *capture = va_arg(formatter, char *);
+	char *shortcut = va_arg(formatter, char *);
 
-	if (capture == NULL)
+	while (shortcut != NULL)
 	{
-		printf("(nil)");
+		printf("%s", shortcut);
 		return;
 	}
-
-	printf("%s", capture);
+	printf("(nil)");
 }
 
 /**
