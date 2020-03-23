@@ -12,12 +12,12 @@ size_t listint_len(const listint_t *h)
 {
 	size_t nodecount;
 
-	if (h)
+	if (h) /* if h is not null */
 	{
 		for (nodecount = 0; h != NULL; nodecount++)
 		{
-			h = h->next;
+			h = h->next; /* go to the next node */
 		}
 	}
-return (nodecount);
+return (nodecount); /* return number of nodes nodecount went through */
 }
