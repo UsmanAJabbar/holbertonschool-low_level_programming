@@ -12,11 +12,13 @@
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *temp = *head;
-	listint_t *afternode = malloc(sizeof(listint_t));
+	listint_t *afternode;
 	unsigned int node;
 
+	/* General checker if *head/head == NULL */
 	if (*head == NULL || head == NULL)
 	{
+		free(*head);
 		return (-1);
 	}
 
@@ -33,7 +35,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			temp = temp->next; /* Get to the required index + 1 (TBDel)*/
 		}
 
-		afternode->next = temp->next; /* copy the address of next */
+		afternode = temp; /* copy the address of next */
 		free(temp); /* remove the current node */
 
 		/* linked lists can't be indexed in reverse, get to the required index */
