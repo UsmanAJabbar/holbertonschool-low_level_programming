@@ -32,6 +32,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		for (node = 0; node < index; node++)
 		{
+			if (temp == NULL)
+			{
+				return (-1);
+			}
 			temp = temp->next; /* Get to the required index + 1 (TBDel)*/
 		}
 
