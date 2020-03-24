@@ -19,38 +19,38 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	/* newnode - malloc check */
 	if (newnode == NULL)
-	{
 		return (NULL);
-	}
 
-	/* No nodes, return the existing node */
+	/* Put the node at the front of the list */
 	if (idx == 0)
 	{
-		return (temp);
+		newnode->n = n; /* saves n into newnode's n attribute */
+		newnode->next = *head; /* connects orphaned node to head (*head = &head) */
+		*head = newnode; /* makes newnode the head now */
 	}
 
-	/* get to the nth index referred by idx */
-	for (i = 0; i < idx - 1; i++)
+	else
 	{
-		/* check if idx is more than the # of nodes */
-		if (temp->next == NULL)
+		/* get to the nth index referred by idx */
+		for (i = 0; i < idx - 1; i++)
 		{
-			return (NULL);
+			/* check if idx is more than the # of nodes */
+			if (temp->next == NULL)
+			{
+				return (NULL);
+			}
+
+			/* else, continue incrementing */
+			temp = temp->next;
 		}
-
-		/* else, continue incrementing */
-		temp = temp->next;
+		/* now that you're there, create a new node */
+		/* copy what temp->next was pointing to */
+		/* now newnode should point to the same node */
+		/* temp->next was pointing to */
+		newnode->n = n; /* copy given data into it */
+		newnode->next = temp->next; /* copy the address of temp->next */
+		/* get temp->next to point to our new node */
+		temp->next = newnode;
 	}
-
-	/* now that you're there, create a new node */
-	/* copy what temp->next was pointing to */
-	/* now newnode should point to the same node */
-	/* temp->next was pointing to */
-	newnode->n = n; /* copy given data into it */
-	newnode->next = temp->next; /* copy the address of temp->next */
-
-	/* get temp->next to point to our new node */
-	temp->next = newnode;
-
 return (newnode);
 }
