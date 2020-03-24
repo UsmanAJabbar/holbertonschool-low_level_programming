@@ -23,9 +23,22 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	}
 
-	/* get to the nth index referred by idx */
-	for (i = 0; i < idx; i++)
+	/* No nodes, return the existing node */
+	if (idx == 0)
 	{
+		return (temp);
+	}
+
+	/* get to the nth index referred by idx */
+	for (i = 0; i < idx - 1; i++)
+	{
+		/* check if idx is more than the # of nodes */
+		if (temp->next == NULL)
+		{
+			return (NULL);
+		}
+
+		/* else, continue incrementing */
 		temp = temp->next;
 	}
 
