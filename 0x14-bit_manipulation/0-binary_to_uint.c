@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -10,11 +11,9 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int result = 0;
-	unsigned int remainder;
-	unsigned int weight = 1;
-	unsigned int binary;
 	unsigned int index;
+	unsigned int weight = 1;
+	unsigned int result = 0;
 
 	if (b == NULL)
 	{
@@ -28,20 +27,24 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-
-		else
-			continue;
 	}
 
-	/* Work with numbers directly rather than a string */
-	binary = atol(b); /* Save coverted binary string as an int */
-	while (binary != 0)
+	/* From the strlen to 0 */
+	while (index != 0)
 	{
-		remainder = binary % 10; /* Fetch and work with the last digit */
-		result = result + remainder * weight; /* Mul by weight */
-		binary = binary / 10; /* Cut off the last digit */
-		weight = weight * 2; /* Increment weight exponent by 2 */
-	}
+		index--; /* go to the index -1 */
 
-return (result);
+		/* If you do find a 1 Multiply by its exponent */
+		if (b[index] == '1')
+		{
+			result = result + ((b[index] - '0') * weight);
+			weight = weight * 2; /* increase weight by 2*/
+		}
+
+		else if (b[index] == '0')
+		{
+			weight = weight * 2;
+		}
+	}
+	return (result);
 }
