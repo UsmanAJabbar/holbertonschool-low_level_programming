@@ -18,36 +18,36 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	/* Open the src & dest + Check Success */
+	/* READ OPERATIONS */
 	src = open(SRC, O_RDWR);
 	/* Copy everything from source into the 1024 bit buffer */
 	readcount = read(src, buffer, 1024);
 	if (src == -1 || readcount == -1)
 	{
-		printf("Error: Can't read from file %s\n", SRC);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", SRC);
 		exit(98);
 	}
 
-	/* Create the destination file if it doesn't exist with 664 perms */
+	/* WRITE OPERATIONS */
 	dest = open(DEST, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	/* Write everything saved in buffer into dest as many bytes READCOUNT */
 	write_d = write(dest, buffer, readcount);
-	if (dest == -1 || write == -1)
+	if (dest == -1 || write_d == -1)
 	{
-		printf("Error: Can't write to %s\n", DEST);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", DEST);
 		exit(99);
 	}
 	if (close(src) == -1)
 	{
-		printf("Error: Can't close fd %d\n", SRC);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src);
 		exit(100);
 	}
 	if (close(dest) == -1)
 	{
-		printf("Error: Can't close fd %d\n", DEST);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest);
 		exit(100);
 	}
 	close(src);
