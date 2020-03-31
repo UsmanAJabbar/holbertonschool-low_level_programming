@@ -3,7 +3,7 @@
 /**
  * create_file - creates a new file
  * with content indicated by stdin
- * @filename - filename
+ * @filename: - filename
  * @text_content: contains text content
  * Return: 1 | -1
  */
@@ -12,12 +12,6 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	int lettercount, writecount;
-
-	/* If the text content is null, make it empty */
-	if (text_content == NULL)
-	{
-		text_content = "";
-	}
 
 	/* Null Check */
 	if (filename == NULL)
