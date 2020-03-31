@@ -25,7 +25,7 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	/* Create and open the file with 600 perms */
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 600);
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
 
 	if (fd == -1)
 	{
