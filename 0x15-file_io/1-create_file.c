@@ -13,10 +13,15 @@ int create_file(const char *filename, char *text_content)
 	int fd;
 	int lettercount, writecount;
 
-	/* Null Check */
+	/* Input/Null Check */
 	if (filename == NULL)
 	{
 		return (-1);
+	}
+
+	if (text_content == NULL)
+	{
+		text_content = "";
 	}
 
 	/* Create and open the file with 600 perms */
@@ -36,7 +41,7 @@ int create_file(const char *filename, char *text_content)
 
 	writecount = write(fd, text_content, lettercount);
 
-	if (lettercount != writecount)
+	if (writecount == -1)
 	{
 		return (-1);
 	}
