@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	/* READ OPERATIONS */
-	src = open(SRC, O_RDWR);
+	src = open(SRC, O_RDONLY);
 	/* Copy everything from source into the 1024 bit buffer */
 	readcount = read(src, buffer, 1024);
 	if (src == -1 || readcount == -1)
