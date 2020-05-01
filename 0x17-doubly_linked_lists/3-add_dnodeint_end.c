@@ -13,10 +13,10 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	dlistint_t *back_of_the_queue = malloc(sizeof(dlistint_t));
 
 	/* Malloc Check */
-	if(back_of_the_queue == NULL)
+	if (back_of_the_queue == NULL)
 	{
 		free(back_of_the_queue);
-		return(NULL);
+		return (NULL);
 	}
 
 	/* Add/Populate Data into our new node */
@@ -24,15 +24,15 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	back_of_the_queue->next = NULL;
 
 	/* If head's empty, return the new node */
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		back_of_the_queue->prev = NULL;
 		*head = back_of_the_queue;
-		return(*head);
+		return (*head);
 	}
 
 	/* Get to the end of the linked list */
-	for(; temp->next != NULL; temp = temp->next)
+	for (; temp->next != NULL; temp = temp->next)
 	{
 		;
 	}
@@ -41,5 +41,5 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	/* Now change temp->next to point to our new node */
 	temp->next = back_of_the_queue;
 
-	return(back_of_the_queue);
+	return (back_of_the_queue);
 }

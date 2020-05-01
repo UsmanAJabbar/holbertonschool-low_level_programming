@@ -16,13 +16,13 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	if (head == NULL)
 		return (NULL);
 
-	for(nodeindex = 0; nodeindex < index; nodeindex++, temp = temp->next)
+	for (nodeindex = 0; nodeindex < index; nodeindex++, temp = temp->next)
 	{
 		/* Checks if temp's null aka if we're out of nodes */
-		if(temp == NULL)
-			return(NULL);
+		if (temp == NULL)
+			return (NULL);
 	}
 	/* If we had enough nodes, then we should've successfully break'ed */
 	capturednode = temp; /* Now return the node */
-	return(capturednode);
+	return (capturednode);
 }

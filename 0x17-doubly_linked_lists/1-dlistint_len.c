@@ -12,8 +12,8 @@ size_t dlistint_len(const dlistint_t *h)
 	int index; /* Will store number of indexes looped */
 
 	/* Loop through all the linked lists until NULL */
-	for(; h != NULL; index++, h = h->next)
+	for (; h != NULL; index++, h = h->next)
 		;
 
-	return(index);
+	return (index);
 }

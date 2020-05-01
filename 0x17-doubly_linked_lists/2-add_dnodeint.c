@@ -13,10 +13,10 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	dlistint_t *da_new_king = malloc(sizeof(dlistint_t)); /* Our new node */
 
 	/* Check if malloc failed */
-	if(da_new_king == NULL)
+	if (da_new_king == NULL)
 	{
 		free(da_new_king);
-		return(NULL);
+		return (NULL);
 	}
 
 	/* Populating data into the new node */
@@ -25,11 +25,11 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	/* If *head's empty, then set our newnode */
 	/* to be the head with prev and next == NULL */
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		da_new_king->next = NULL; /* Terminate the linked list */
 		*head = da_new_king; /* Copy new node to *head */
-		return(*head);
+		return (*head);
 	}
 
 	/* Since our new node's supposed to become the head */
@@ -39,6 +39,6 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	{
 		da_new_king->next = temp; /* Else our new node should point to head */
 		*head = da_new_king; /* Our new node is now the head */
-		return(*head);
+		return (*head);
 	}
 }

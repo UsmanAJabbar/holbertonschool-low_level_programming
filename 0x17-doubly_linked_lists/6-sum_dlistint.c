@@ -11,11 +11,11 @@ int sum_dlistint(dlistint_t *head)
 	int sum = 0;
 
 	/* Loop through all the linked lists */
-	for(; temp != NULL; temp = temp->next)
+	for (; temp != NULL; temp = temp->next)
 	{
 		/* Access the values inside the list */
 		/* Add onto sum every single time */
 		sum = sum + temp->n;
 	}
-	return(sum);
+	return (sum);
 }
