@@ -38,6 +38,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	else
 	{
 		da_new_king->next = temp; /* Else our new node should point to head */
+		temp->prev = da_new_king; /*Point the next node->prev to the new head node */
 		*head = da_new_king; /* Our new node is now the head */
 		return (*head);
 	}
