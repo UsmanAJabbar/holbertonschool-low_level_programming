@@ -29,6 +29,14 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		if (temp->next == NULL)
 			return (-1);
 	}
+
+	/* Check if the node to tbe deleted is the last node */
+	if (temp->next == NULL)
+	{
+		temp->prev->next = NULL
+		free(temp);
+		return(1);
+	}
 	/* Go to the node before it and point it to the node after our current node */
 	temp->prev->next = temp->next;
 	temp->next->prev = temp->prev;
