@@ -19,6 +19,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		/* Move the head forward to avoid errors */
 		/* Since temp still holds the old head, free it */
 		*head = (*head)->next;
+		if ((*head) != NULL)
+			(*head)->prev = NULL;
 		free(temp);
 		return (1);
 	}
