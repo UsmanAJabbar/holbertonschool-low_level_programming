@@ -15,12 +15,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (moveasidepls == NULL) /* Malloc Check */
 		return (NULL);
 	moveasidepls->n = n; /* Add universal data */
-	if (*h == NULL) /* If the linked list is empty */
+	if (*h == NULL && idx == 0) /* If the linked list is empty */
 	{
 		moveasidepls->next = NULL, moveasidepls->prev = NULL;
 		*h = moveasidepls;
 		return (*h);
 	}
+	if (*h == NULL || h == NULL)
+		return (NULL);
 	/* If we need to insert the new node @ the 0th index */
 	if ((idx == 0) && (temp->next != NULL))
 	{
