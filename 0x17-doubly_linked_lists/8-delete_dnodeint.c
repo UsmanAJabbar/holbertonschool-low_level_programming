@@ -33,7 +33,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	/* Check if the node to tbe deleted is the last node */
 	if (temp->next == NULL)
 	{
-		temp->prev->next = NULL
+		temp->prev->next = NULL;
 		free(temp);
 		return(1);
 	}
