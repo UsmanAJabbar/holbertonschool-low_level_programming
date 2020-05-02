@@ -9,41 +9,43 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *temp = *h;
-	dlistint_t *moveasidepls = malloc(sizeof(dlistint_t));
-	unsigned int nodeindex;
+	dlistint_t *temp = *h, *moveasidepls = malloc(sizeof(dlistint_t));
+	unsigned int nodecount;
 
-	/* Malloc Check */
-	if (moveasidepls == NULL)
+	if (moveasidepls == NULL) /* Malloc Check */
 	{
 		free(moveasidepls);
 		return (NULL);
 	}
-	/* Add universal basic data */
-	moveasidepls->n = n;
-	/* If the linked list is empty */
-	if (*h == NULL)
+	moveasidepls->n = n; /* Add universal data */
+	if (*h == NULL) /* If the linked list is empty */
 	{
 		moveasidepls->next = NULL, moveasidepls->prev = NULL;
 		return (moveasidepls);
 	}
-	/* Loop until the required index */
-	for (nodeindex = 0; nodeindex < idx - 1; nodeindex++, temp = temp->next)
+	/* If we need to insert the new node @ the 0th index */
+	if ((idx == 0) && (temp->next != NULL))
 	{
-		/* Check if we're out of nodes */
-		if (temp->next == NULL)
+		moveasidepls->prev = NULL, moveasidepls->next = temp;
+		temp->prev = moveasidepls, *h = moveasidepls;
+		return (temp);
+	}
+	/* Loop until the required index */
+	for (nodecount = 0; nodecount < idx; nodecount++, temp = temp->next)
+	{
+		if (temp->next == NULL) /* Check if we have enough nodes */
 			return (NULL);
 	}
 	/* Check if we're at the last node */
 	if (temp->next == NULL)
 	{
-		moveasidepls->next = NULL, moveasidepls->prev = temp;
+		moveasidepls->prev = temp, moveasidepls->next = NULL;
 		temp->next = moveasidepls;
 		return (moveasidepls);
 	}
-	/* Else, insert the node at that index */
+	/* Else, we must be at the middle, insert the node at that index */
 	moveasidepls->next = temp; /* new node should point to current temp */
 	moveasidepls->prev = temp->prev; /* newnode should point to temp prev node */
-	temp->prev->next = moveasidepls;
+	temp->prev->next = moveasidepls; /* Point the prev temp->next to new node */
 	return (moveasidepls);
 }
