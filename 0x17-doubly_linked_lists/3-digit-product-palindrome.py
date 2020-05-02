@@ -22,4 +22,5 @@ for l in range(100, 1000):
         # Update the value of palindrome if we got a new palindrome
         if palindrome > value:
             value = palindrome
+
 print("The largest palindrome found is {:d}".format(value))
