@@ -13,15 +13,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int nodecount;
 
 	if (moveasidepls == NULL) /* Malloc Check */
-	{
-		free(moveasidepls);
 		return (NULL);
-	}
 	moveasidepls->n = n; /* Add universal data */
 	if (*h == NULL) /* If the linked list is empty */
 	{
 		moveasidepls->next = NULL, moveasidepls->prev = NULL;
-		return (moveasidepls);
+		*h = moveasidepls;
+		return (*h);
 	}
 	/* If we need to insert the new node @ the 0th index */
 	if ((idx == 0) && (temp->next != NULL))
@@ -47,5 +45,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	moveasidepls->next = temp; /* new node should point to current temp */
 	moveasidepls->prev = temp->prev; /* newnode should point to temp prev node */
 	temp->prev->next = moveasidepls; /* Point the prev temp->next to new node */
+	temp->prev = moveasidepls;
 	return (moveasidepls);
 }
