@@ -28,7 +28,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		moveasidepls->prev = NULL, moveasidepls->next = temp;
 		temp->prev = moveasidepls, *h = moveasidepls;
-		return (temp);
+		return (*h);
 	}
 	/* Loop until the required index */
 	for (nodecount = 0; nodecount < idx; nodecount++, temp = temp->next)
