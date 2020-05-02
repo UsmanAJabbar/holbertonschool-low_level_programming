@@ -1,8 +1,13 @@
 # C - Doubly Linked Lists
 
-This folder contains all the necessary files/code required for the Holberton checker.
+This folder contains all the necessary files/code required for the Holberton checker. This folder covers Doubly Linked lists building upon previous Singly Linked List concepts.
 
-This folder covers Doubly Linked lists building upon previous Singly Linked List projects.
+## Note:
+- All of the main files are available in the main/ folder
+- All of the prototypes are available in the lists.h file
+
+### Header File - lists.h
+Contains all of C prototypes and struct definitions for the logic files to use
 
 ### 0. Print list - 0-print_dlistint.c
 Prints of the elements found in a doubly linked lists. Also returns the number of nodes printed.
