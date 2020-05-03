@@ -31,23 +31,20 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (moveasidepls);
 	}
 	/* Loop until the required index */
-	for (nodecount = 0; nodecount < idx; nodecount++, temp = temp->next)
-	{
-		if (temp->next == NULL) /* Check if we have enough nodes */
+	for (nodecount = 0; nodecount < idx - 1; nodecount++, temp = temp->next)
+		if (temp == NULL)
 			return (NULL);
-	}
-	/* Check if we're at the last node */
+
+	/* Assigning values to new node */
+	moveasidepls->prev = temp, moveasidepls->next = temp->next;
+
+	/* Connecting temp to new node */
+	if (temp->next != NULL)
+		temp->next->prev = moveasidepls;
+
 	if (temp->next == NULL)
-	{
-		temp = temp->prev; /* Move node back by -1 idx */
-		moveasidepls->next = temp->next, moveasidepls->prev = temp;
-		temp->next = moveasidepls;
-		return (moveasidepls);
-	}
-	/* Else, we must be at the middle, insert the node at that index */
-	moveasidepls->next = temp; /* new node should point to current temp */
-	moveasidepls->prev = temp->prev; /* newnode should point to temp prev node */
-	temp->prev->next = moveasidepls; /* Point the prev temp->next to new node */
-	temp->prev = moveasidepls;
+		moveasidepls->next = NULL, moveasidepls->prev = temp;
+
+	temp->next = moveasidepls;
 	return (moveasidepls);
 }
