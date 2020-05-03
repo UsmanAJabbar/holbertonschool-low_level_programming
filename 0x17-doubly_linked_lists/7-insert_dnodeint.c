@@ -39,7 +39,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	/* Check if we're at the last node */
 	if (temp->next == NULL)
 	{
-		moveasidepls->prev = temp, moveasidepls->next = NULL;
+		temp = temp->prev; /* Move node back by -1 idx */
+		moveasidepls->next = temp->next, moveasidepls->prev = temp;
 		temp->next = moveasidepls;
 		return (moveasidepls);
 	}
