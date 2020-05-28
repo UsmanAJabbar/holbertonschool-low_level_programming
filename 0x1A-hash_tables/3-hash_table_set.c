@@ -14,14 +14,38 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dup_key = strdup(key);
 	char *dup_value = strdup(value);
 	hash_node_t *new_node = malloc(sizeof(hash_node_t));
+	hash_node_t *formerheadcopy;
+	hash_node_t *temp;
 
 	if (ht == NULL || key == NULL || new_node == NULL)
 		return(0);
 
-	new_node->key = dup_key;
 	new_node->value = dup_value;
+	new_node->key = dup_key;
 
-	ht->array[index] = new_node;
+	/* Add node to the beginning of the list */
+	/* CASE 1: If a singly linked list isn't there */
+	if (ht->array[index] == NULL)
+	{
+		ht->array[index] = new_node;
+		new_node->next = NULL;
+	}
 
-	return (1);
+	/* CASE 2: If a singly linked list is there, make */
+	/* new node the head and connect it to the rest of */
+	/* the original list */
+	else
+	{
+		formerheadcopy = ht->array[index];	/* Keep a copy of our current head */
+		new_node->next = formerheadcopy; 	/* Our new node should now point to old head */
+		ht->array[index] = new_node; 		/* Make our new node the head */
+	}
+
+	temp = ht->array[index];
+	while(temp)
+	{
+		printf("%s\n", temp->key);
+		temp = temp->next;
+	}	
+	return(0);
 }
