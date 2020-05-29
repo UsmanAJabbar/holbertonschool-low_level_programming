@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((unsigned char *)key, ht->size);
-	for (search = ht->array[index]; search; search = search->next, index++)
+	for (search = ht->array[index]; search; search = search->next)
 		if (strcmp(search->key, key) == 0)
 		{
 			free(search->value);
