@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new, *oldhead, *search;
 
 	if (!ht || !key || strcmp(key, "") == 0)
-		return(0);
+		return (0);
 
 	index = key_index((unsigned char *)key, ht->size);
 	for (search = ht->array[index]; search; search = search->next, index++)
@@ -42,8 +42,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		oldhead = ht->array[index];	/* Keep a copy of our current head */
-		new->next = oldhead; 		/* Our new node should now point to old head */
-		ht->array[index] = new; 	/* Make our new node the head */
+		new->next = oldhead;		/* Our new node should now point to old head */
+		ht->array[index] = new;		/* Make our new node the head */
 	}
-	return(1);
+	return (1);
 }

@@ -1,8 +1,14 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_delete - gets rid of the
+ * hashtable
+ * @ht: hash table
+ * Return: Always Void
+ */
 void hash_table_delete(hash_table_t *ht)
 {
-	long unsigned int index;
+	unsigned long int index;
 
 	for (index = 0; index < ht->size; index++)
 		if (ht->array[index] != NULL)
