@@ -10,35 +10,39 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = key_index((unsigned char *)key, ht->size);
-	char *dup_key = strdup(key);
-	char *dup_value = strdup(value);
-	hash_node_t *new_node = malloc(sizeof(hash_node_t));
-	hash_node_t *formerheadcopy;
+	unsigned long int index;
+	hash_node_t *new, *oldhead, *search;
 
-	if (ht == NULL || key == NULL || new_node == NULL)
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
 		return(0);
 
-	new_node->value = dup_value;
-	new_node->key = dup_key;
+	index = key_index((unsigned char *)key, ht->size);
+	for (search = ht->array[index]; search; search = search->next, index++)
+		if (strcmp(search->key, key) == 0)
+		{
+			search->value = (char *)value;
+			return (0);
+		}
 
-	/* Add node to the beginning of the list */
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+		return (0);
+	new->value = strdup(value);
+	new->key = strdup(key);
+
 	/* CASE 1: If a singly linked list isn't there */
 	if (ht->array[index] == NULL)
 	{
-		ht->array[index] = new_node;
-		new_node->next = NULL;
+		ht->array[index] = new;
+		new->next = NULL;
 	}
 
-	/* CASE 2: If a singly linked list is there, make */
-	/* new node the head and connect it to the rest of */
-	/* the original list */
+	/* CASE 2: If a singly linked list is there, make one */
 	else
 	{
-		formerheadcopy = ht->array[index];	/* Keep a copy of our current head */
-		new_node->next = formerheadcopy; 	/* Our new node should now point to old head */
-		ht->array[index] = new_node; 		/* Make our new node the head */
+		oldhead = ht->array[index];	/* Keep a copy of our current head */
+		new->next = oldhead; 		/* Our new node should now point to old head */
+		ht->array[index] = new; 	/* Make our new node the head */
 	}
-
 	return(0);
 }
