@@ -5,11 +5,8 @@ void hash_table_delete(hash_table_t *ht)
 	long unsigned int index;
 
 	for (index = 0; index < ht->size; index++)
-	{
 		if (ht->array[index] != NULL)
 			free_stack(ht->array[index]);
-		free(ht->array[index]);
-	}
 	free(ht->array); /* 233 | 8245 */
 	free(ht); /* Frees the hash table */
 }
@@ -29,6 +26,6 @@ void free_stack(hash_node_t *head)
 		head = head->next;
 		free(temp->value);
 		free(temp->key);
-		/* free(temp); */
+		free(temp);
 	}
 }

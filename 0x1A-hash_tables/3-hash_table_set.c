@@ -15,7 +15,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dup_value = strdup(value);
 	hash_node_t *new_node = malloc(sizeof(hash_node_t));
 	hash_node_t *formerheadcopy;
-	hash_node_t *temp;
 
 	if (ht == NULL || key == NULL || new_node == NULL)
 		return(0);
@@ -41,11 +40,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new_node; 		/* Make our new node the head */
 	}
 
-	temp = ht->array[index];
-	while(temp)
-	{
-		printf("%s\n", temp->key);
-		temp = temp->next;
-	}	
 	return(0);
 }
