@@ -31,6 +31,13 @@ shash_table_t *shash_table_create(unsigned long int size)
 	return (new_table);
 }
 
+/**
+ * shash_table_set - table
+ * @ht: ht
+ * @key: key
+ * @value: value
+ * Return: Int
+ */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
@@ -72,6 +79,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	return (1);
 }
 
+/**
+ * seeker - seeks the meaning of laef
+ * @ht: hash table
+ * @node: node
+ * Return: Always void
+ */
 void *seeker(shash_table_t *ht, shash_node_t *node)
 {
 	unsigned long int index;
@@ -134,6 +147,11 @@ void shash_table_print(const shash_table_t *ht)
 	}
 }
 
+/**
+ * shash_table_print_rev - rev
+ * @ht: ht
+ * Return: Void
+ */
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	unsigned long int index;
@@ -143,11 +161,11 @@ void shash_table_print_rev(const shash_table_t *ht)
 	if (ht)
 	{
 		printf("{");
-		for (index = 0; index < ht->size; index++)
+		for (index = ht->size - 1; index > 0; index--)
 		{
 			if (ht->array[index])
 				/* Get to the end of the list */
-				for (temp = ht->array[index]; temp; temp = temp->next)
+				for (temp = ht->array[index]; temp; temp = temp->snext)
 						if (temp->next == NULL)
 							break;
 				for (; temp; temp = temp->sprev)
@@ -160,6 +178,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 		printf("}\n");
 	}
 }
+
+
 
 int main(void)
 {
