@@ -85,7 +85,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * @node: node
  * Return: Always void
  */
-void *seeker(shash_table_t *ht, shash_node_t *node)
+int *seeker(shash_table_t *ht, shash_node_t *node)
 {
 	unsigned long int index;
 	int i;
@@ -113,6 +113,7 @@ void *seeker(shash_table_t *ht, shash_node_t *node)
 	   should be set to that.
 	4) Else, if character is found and is after d, thne node/s node->snext
        should be set to that. */
+	return (0);
 }
 
 /**
