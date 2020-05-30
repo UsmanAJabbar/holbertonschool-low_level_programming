@@ -137,7 +137,7 @@ void shash_table_print(const shash_table_t *ht)
 				continue;
 
 			if (ht->array[index])
-				for (temp = ht->array[index]; temp; temp = temp->snext)
+				for (temp = ht->array[index]; temp; temp = temp->next)
 				{
 					if (flag == 1)
 						printf(", ");
@@ -169,7 +169,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 				/*for (temp = ht->array[index]; temp; temp = temp->snext)
 						if (temp->next == NULL)
 							break; */
-				for (temp = ht->array[index]; temp; temp = temp->sprev)
+				for (temp = ht->array[index]; temp; temp = temp->next)
 				{
 					if (flag == 1)
 						printf(", ");
