@@ -148,7 +148,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 			if (ht->array[index])
 				/* Get to the end of the list */
 				for (temp = ht->array[index]; temp; temp = temp->next)
-						;
+						if (temp->next == NULL)
+							break;
 				for (; temp; temp = temp->sprev)
 				{
 					if (flag == 1)
