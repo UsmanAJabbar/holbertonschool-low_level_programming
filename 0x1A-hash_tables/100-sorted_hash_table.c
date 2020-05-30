@@ -165,10 +165,10 @@ void shash_table_print_rev(const shash_table_t *ht)
 		{
 			if (ht->array[index])
 				/* Get to the end of the list */
-				for (temp = ht->array[index]; temp; temp = temp->snext)
+				/*for (temp = ht->array[index]; temp; temp = temp->snext)
 						if (temp->next == NULL)
-							break;
-				for (; temp; temp = temp->sprev)
+							break; */
+				for (temp = ht->array[index]; temp; temp = temp->sprev)
 				{
 					if (flag == 1)
 						printf(", ");
@@ -179,17 +179,38 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 }
 
-
-
-int main(void)
+/**
+ * hash_table_delete - gets rid of the
+ * hashtable
+ * @ht: hash table
+ * Return: Always Void
+ */
+void shash_table_delete(shash_table_t *ht)
 {
-	shash_table_t *ht = shash_table_create(1024);
-	shash_table_set(ht, "y", "0");
-	shash_table_print(ht);
-	shash_table_set(ht, "j", "1");
-	shash_table_set(ht, "b", "3");
-	shash_table_set(ht, "c", "2");
-	shash_table_print(ht);
-	shash_table_print_rev(ht);
-	return (0);
+	unsigned long int index;
+
+	for (index = 0; index < ht->size; index++)
+		if (ht->array[index] != NULL)
+			free_shtack(ht->array[index]);
+	free(ht->array); /* 233 | 8245 */
+	free(ht); /* Frees the hash table */
+}
+
+/**
+ * free_stack - frees the stack
+ * @head: doubly linked list
+ * Return: Always Void
+ */
+void free_shtack(shash_node_t *head)
+{
+	shash_node_t *temp;
+
+	while (head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp->value);
+		free(temp->key);
+		free(temp);
+	}
 }
