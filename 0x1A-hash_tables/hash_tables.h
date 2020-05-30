@@ -101,6 +101,6 @@ void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 void free_shtack(shash_node_t *head);
 
-void *seeker(shash_table_t *ht, shash_node_t *node);
+int *seeker(shash_table_t *ht, shash_node_t *node);
 void sprint(shash_table_t *ht);
 #endif
