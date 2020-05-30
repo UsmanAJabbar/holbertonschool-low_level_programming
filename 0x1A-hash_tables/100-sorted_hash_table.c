@@ -90,9 +90,9 @@ int *seeker(shash_table_t *ht, shash_node_t *node)
 	unsigned long int index;
 	int i;
 	shash_node_t *search;
-	char *alpha[] = 
-			{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", 
-				"o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", NULL};
+	char *alpha[] = {
+		"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
+			"o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", NULL};
 
 	for (i = 0; alpha[i] != NULL; i++)
 	{
@@ -100,19 +100,11 @@ int *seeker(shash_table_t *ht, shash_node_t *node)
 		for (search = ht->array[index]; search; search = search->next)
 		{
 			if (alpha[i][0] < search->key[0])
-				node->sprev = search, node->snext = NULL;
+				node->sprev = search, node->snext = NULL, ht->shead = search;
 			else
-				node->snext = search, node->sprev = NULL;
+				node->snext = search, node->sprev = NULL, ht->stail = search;
 		}
 	}
-/*	1) Seeker should be able to set the sprev and snext
-	2) Seeker should go through the hash table, and look for
-	   any character, and determine if that character appears
-	   before "d" or after "d".
-	3) If a character is found and is before d, the node/s node->sprev
-	   should be set to that.
-	4) Else, if character is found and is after d, thne node/s node->snext
-       should be set to that. */
 	return (0);
 }
 
@@ -165,10 +157,6 @@ void shash_table_print_rev(const shash_table_t *ht)
 		for (index = ht->size - 1; index > 0; index--)
 		{
 			if (ht->array[index])
-				/* Get to the end of the list */
-				/*for (temp = ht->array[index]; temp; temp = temp->snext)
-						if (temp->next == NULL)
-							break; */
 				for (temp = ht->array[index]; temp; temp = temp->next)
 				{
 					if (flag == 1)
