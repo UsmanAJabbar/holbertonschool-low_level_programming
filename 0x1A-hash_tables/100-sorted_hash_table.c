@@ -100,9 +100,9 @@ int *seeker(shash_table_t *ht, shash_node_t *node)
 		for (search = ht->array[index]; search; search = search->next)
 		{
 			if (alpha[i][0] < search->key[0])
-				node->sprev = search, node->snext = NULL, ht->shead = search;
+				node->sprev = search, node->snext = NULL, ht->shead = node->sprev;
 			else
-				node->snext = search, node->sprev = NULL, ht->stail = search;
+				node->snext = search, node->sprev = NULL, ht->stail = node->snext;
 		}
 	}
 	return (0);
@@ -202,4 +202,37 @@ void free_shtack(shash_node_t *head)
 		free(temp->key);
 		free(temp);
 	}
+}
+#include "hash_tables.h"
+
+/**
+ * hash_table_get - retrives the value
+ * using the given key.
+ * @ht: hash table
+ * @key: key
+ * Return: NULL on Fail | Value on Pass
+ */
+char *shash_table_get(const shash_table_t *ht, const char *key)
+{
+	unsigned long int index;
+	char *value = NULL;
+	shash_node_t *search;
+
+	if (!key || !ht || strcmp(key, "") == 0)
+		return (value);
+
+	index = key_index((unsigned char *)key, ht->size);
+
+		if (ht->array[index])
+		{
+			for (search = ht->array[index]; search; search = search->next)
+			{
+				if (strcmp(search->key, key) == 0)
+				{
+					value = search->value;
+					break;
+				}
+			}
+		}
+	return (value);
 }
