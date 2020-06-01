@@ -16,7 +16,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !key || strcmp(key, "") == 0)
 		return (0);
 
+	/* Generate a possible index */
 	index = key_index((unsigned char *)key, ht->size);
+
+	/* Search if the data already exists at that node */
 	for (search = ht->array[index]; search; search = search->next)
 		if (strcmp(search->key, key) == 0)
 		{
@@ -25,6 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (1);
 		}
 
+	/* Start creating a singly linked list to add data */
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
 		return (0);
@@ -38,7 +42,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new->next = NULL;
 	}
 
-	/* CASE 2: If a singly linked list is there, make one */
+	/* CASE 2: If a singly linked list is there, continue building */
 	else
 	{
 		oldhead = ht->array[index];	/* Keep a copy of our current head */
