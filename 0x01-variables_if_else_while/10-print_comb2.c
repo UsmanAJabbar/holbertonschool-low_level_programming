@@ -1,31 +1,24 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
+ * main - Prints all the numbers between
+ * 00 and 99 using putchar with ", " acting
+ * as seperators.
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int f;
-	int l;
+	int f_digit, l_digit;
 
-	/* 48 = 0 | 57 = 9 */
-	for (f = 48; f <= 57; f++)
-	{
-		for (l = 48; l <= 57; l++)
+	for (f_digit = '0'; f_digit <= '9'; f_digit++)
+		for (l_digit = 48; l_digit <= 57; l_digit++)
 		{
-		putchar(f);
-		putchar(l);
+			putchar(f_digit), putchar(l_digit);
 
-		if ((f != '9') || (l != '9'))
-			{
-			putchar(',');
-			putchar(' ');
-			}
+			if ((f_digit != '9') || (l_digit != '9'))
+				putchar(','), putchar(' ');
 		}
-	}
+
 	putchar('\n');
 	return (0);
 }

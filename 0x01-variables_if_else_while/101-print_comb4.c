@@ -1,39 +1,25 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
+ * main - Prints out all the numbers
+ * between 0 - 1000 with non repeating
+ * digits.
  * Return: Always 0 (Success)
  */
-
-#define ZERO 48
-#define NINE 57
-
 int main(void)
 {
-int f = 0, m = 0, l = 0;
+	int f, m, l;
 
-	for (f = ZERO; f <= NINE; f++)
-	{
-		for (m = ZERO; m <= NINE; m++)
-		{
-			for (l = ZERO; l <= NINE; l++)
+	for (f = '0'; f <= '9'; f++)
+		for (m = '0'; m <= '9'; m++)
+			for (l = '0'; l <= '9'; l++)
 			{
 				if ((f < m) && (m < l))
-				{
-				putchar(f);
-				putchar(m);
-				putchar(l);
-
-					if (f != 55 || m != 56 || l != 57)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
+					putchar(f), putchar(m), putchar(l);
+				if (f != 55 || m != 56 || l != 57)
+					putchar(','), putchar(' ');
 			}
-		}
-	}
+
 	putchar('\n');
 	return (0);
 }

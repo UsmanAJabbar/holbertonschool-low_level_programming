@@ -1,34 +1,25 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
+ * main - Prints out all the numbers
+ * between 0 and 99 with non-repeating
+ * digits.
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int f;
-	int l;
+	int f, l;
 
-	/* 48 = 0 | 57 = 9 */
-	for (f = 48; f <= 57; f++)
-	{
-		for (l = 48; l <= 57; l++)
-		{
+	for (f = '0'; f <= '9'; f++)
+		for (l = '0'; l <= '9'; l++)
 			if (l > f)
 			{
-				putchar(f);
-				putchar(l);
-
-				if ((f != 56) || (l != 57))
-				{
-					putchar(',');
-					putchar(' ');
-				}
+				putchar(f), putchar(l);
+				if ((f != '8') || (l != '9'))
+					putchar(','), putchar(' ');
 			}
-		}
-	}
+
 	putchar('\n');
 	return (0);
 }
