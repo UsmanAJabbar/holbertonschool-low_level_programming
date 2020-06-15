@@ -14,18 +14,11 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i;
-	int j;
+	int i, j;
 
 	for(i = 0, j = 0; i < (size * size); i++, j++)
-	{
 		*a = a[i][i] += a[i][i];
-	}
 
         for(i = size, j = 0; i < (size * size); i--, j++)
-	{
-		*a = a[i][j] += a[i][j];
-	}
-
-	printf("The value diagonally of a added together is %d", *a);
+			*a = a[i][j] += a[i][j];
 }
