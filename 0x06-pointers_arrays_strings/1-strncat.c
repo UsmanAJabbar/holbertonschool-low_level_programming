@@ -12,16 +12,13 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int destlen = _strlen(dest);
-	int i;
+	int i, destlen = _strlen(dest);
 
 	for (i = 0; i < n && i <= destlen; i++)
-	{
 		dest[destlen + i] = src[i];
-	}
 	dest[destlen + i] = '\0';
 
-return (dest);
+	return (dest);
 }
 
 /**
@@ -29,13 +26,12 @@ return (dest);
  * @s: imported
  * Return: length to print_rev
  */
-
 int _strlen(char *s)
 {
 	int len;
 
 	for (len = 0; s[len] != '\0'; len++)
-		continue;
+		;
 
 	return (len);
 }
