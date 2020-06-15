@@ -11,8 +11,7 @@ void print_numbers(void)
 	int sdnums = 0;
 
 	for (sdnums = '0'; sdnums <= '9'; sdnums++)
-	{
 		_putchar(sdnums);
-	}
+
 	_putchar('\n');
 }

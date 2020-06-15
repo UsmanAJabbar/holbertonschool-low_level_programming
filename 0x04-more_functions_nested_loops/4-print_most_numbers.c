@@ -12,11 +12,8 @@ void print_most_numbers(void)
 	int sdnums = 0;
 
 	for (sdnums = '0'; sdnums <= '9'; sdnums++)
-	{
 		if (sdnums != '2' && sdnums != '4')
-		{
 			_putchar(sdnums);
-		}
-	}
+
 	_putchar('\n');
 }
