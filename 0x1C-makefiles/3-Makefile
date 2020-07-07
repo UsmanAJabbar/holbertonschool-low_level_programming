@@ -1,0 +1,19 @@
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm -f
+
+# 'all' Depends On The Creation Of Obj Files
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# CLEANUP
+clean:
+	$(RM) *~ $(NAME)
+oclean:
+	$(RM) $(OBJ)
+fclean: clean oclean
+
+# re, when invoked, calls 'oclean' and 'all'
+re: oclean all
