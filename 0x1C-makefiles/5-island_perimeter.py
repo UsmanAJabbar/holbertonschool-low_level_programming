@@ -15,7 +15,7 @@ def island_perimeter(grid):
         grid: list of lists containing the grid
     """
 
-    if len(grid) < 1 or len(grid[0]) < 1:
+    if grid is None or len(grid) < 1 or len(grid[0]) < 1:
         return
 
     grid_height = len(grid)
