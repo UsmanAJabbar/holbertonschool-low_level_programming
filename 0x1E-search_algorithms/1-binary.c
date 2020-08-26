@@ -15,11 +15,11 @@ int binary_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-	while(1)
+	while (1)
 	{
 		/* Generate printing module */
 		printf("Searching in array: ");
-		for(index = start; index <= end; index++)
+		for (index = start; index <= end; index++)
 		{
 			printf("%d", array[index]);
 			if (index < end)
